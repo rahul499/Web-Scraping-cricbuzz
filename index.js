@@ -119,11 +119,6 @@ app.get("/api/news-feed", async (req, res) => {
 app.get("/api/scores-live", async (req, res) => {
   try {
     const scoresLive = await getScoresLive();
-    if (scoresLive.length == 0) {
-      return res.status(200).json({
-        result: "No Live Matches",
-      });
-    }
     return res.status(200).json({
       result: scoresLive,
     });
@@ -138,7 +133,7 @@ app.get("/api/match-schedule", async (req, res) => {
   try {
     const schedule = await getMatchSchedule();
     return res.status(200).json({
-      "Per Day Schedule": schedule,
+      "schedule": schedule,
     });
   } catch (err) {
     return res.status(500).json({
