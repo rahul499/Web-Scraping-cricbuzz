@@ -37,11 +37,15 @@
         <i class="fa fa-bars nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
+        <a (click)="home()"><i class="fas fa-home"></i><span>Home</span></a>
         <a href="#"
           ><i class="fas fa-star-of-life"></i><span>Live Scores</span></a
         >
         <a href="#"><i class="far fa-newspaper"></i><span>Latest News</span></a>
         <a href="#"><i class="fas fa-book"></i><span>Schedule</span></a>
+        <a (click)="getLiveScoreSoccer()"
+          ><i class="fas fa-futbol"></i><span>Football Scores</span></a
+        >
       </div>
     </div>
     <!--mobile navigation bar end-->
@@ -54,22 +58,82 @@
           alt=""
           class="profile_image"
         />
-        <h4>CricBuzz</h4>
+        <h4>CRIC BUZZ</h4>
       </div>
-      <a (click)="home()"><i class="fas fa-home"></i><span>Home</span></a>
-      <a (click)="getLiveScore()"
+      <a (click)="home()" [ngClass]="{'active' : homePage}"><i class="fas fa-home"></i><span>Home</span></a>
+      <a (click)="getLiveScore()" [ngClass]="{'active' : live}"
         ><i class="fas fa-star-of-life"></i><span>Live Scores</span></a
       >
-      <a (click)="getNews()"
+      <a (click)="getNews()" [ngClass]="{'active' : latestnews}"
         ><i class="far fa-newspaper"></i><span>Latest News</span></a
       >
-      <a (click)="getSchedule()"
-        ><i class="fas fa-book"></i><span>Schedule</span></a
+      <a (click)="getSchedule()" [ngClass]="{'active' : sched}"
+        ><i class="fas fa-book"></i><span>Cricket Schedule</span></a
+      >
+      <a (click)="getLiveScoreSoccer()" [ngClass]="{'active' : footballlive}"
+        ><i class="fas fa-futbol"></i><span>Football Scores</span></a
       >
     </div>
     <!--sidebar end-->
 
-    <div class="content bg">
+
+
+      <div *ngIf="homePage">
+        <div class="bg">
+          <img src="https://media.gettyimages.com/photos/sports-heroes-picture-id502301173?s=2048x2048" alt="image" class="homeImage">
+        </div>
+        <div class="content1">
+        <div class="about-section">
+          <h1>About CricBuzz</h1>
+          <p>CricBuzz is a sports news and app to all exclusively for the game of cricket. The site features news, articles, live coverage of cricket matches (including videos and scorecards), player rankings and team rankings. The website also offers many mobile apps. CricBuzz is also the largest mobile app for cricket news and scores in India .</p>
+        </div>
+
+        <h2 style="text-align:center; font-size: 35px; margin-top:50px;">Our Team</h2>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="https://tvline.com/wp-content/uploads/2017/08/suits-100th-episode-mike.jpg?w=620&h=440&crop=1" alt="Jane" style="width:100%; height:250px;">
+              <div class="container">
+                <h2>Mike Ross</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, vitae.</p>
+                <p>mikeross@gmail.com</p>
+                <p><button class="button">Contact</button></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="https://pbs.twimg.com/profile_images/720270636434763777/dB0QdPId.jpg" alt="Mike" style="width:100%; height:250px;">
+              <div class="container">
+                <h2>Harvey Specter</h2>
+                <p class="title">Technical Lead</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, rerum.</p>
+                <p>harvey@example.com</p>
+                <p><button class="button">Contact</button></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="https://buddybits.com/wp-content/uploads/2016/05/10-Reasons-why-we-love-Donna-Paulsen-1280x720.jpg" alt="John" style="width:100%; height:250px;">
+              <div class="container">
+                <h2>Donna Paulson</h2>
+                <p class="title">Marketing Head</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, ipsam!</p>
+                <p>donna@example.com</p>
+                <p><button class="button">Contact</button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    <div class="content ">
+
       <div *ngIf="schedule.length > 0 && sched">
         <h1>Match Schedule</h1>
         <div *ngFor="let item of schedule" class="schedule">
@@ -77,7 +141,7 @@
         </div>
       </div>
 
-      <div *ngIf="news.length > 0 && latestnews">
+      <div *ngIf="news.length > 0 && latestnews" class="space">
         <h1>Latest News</h1>
         <div *ngFor="let newsItem of news" class="schedule">
           <h3>{{ newsItem.mainHeader }}</h3>
@@ -95,6 +159,22 @@
       <div *ngIf="score.length <= 0 && live" class="center">
         <h1>No Live Matches</h1>
       </div>
+
+
+    <div *ngIf="football.length > 0 && footballlive">
+      <h1>Live Scores</h1>
+      <div *ngFor="let footscoreItem of football" class="schedule">
+        <h3>{{ footscoreItem.competition_name }}</h3>
+        <h4>Teams - {{ footscoreItem.away_name }} vs {{ footscoreItem.home_name }}</h4>
+        <h4>Date and Location - {{footscoreItem.added}} ({{footscoreItem.location}})</h4>
+        <h4>Scores - {{footscoreItem.score}}</h4>
+        <h4>Status - {{footscoreItem.status}}</h4>
+      </div>
+    </div>
+    <div *ngIf="football.length <= 0 && footballlive" class="center">
+      <h1>No Live Matches</h1>
+    </div>
+
     </div>
 
     <script type="text/javascript">

@@ -25,6 +25,11 @@ export class CricbuzzService {
     return this.http.get<any>(url);
   }
 
+  getLiveScoreSoccer():Observable<any>{
+    const url = "http://localhost:3000/api/liveScoreSoccer";
+    return this.http.get<any>(url);
+  }
+
 }
 
 
