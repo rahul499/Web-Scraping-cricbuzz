@@ -10,7 +10,7 @@ const getNewsData = async () => {
 };
 
 const getLiveCricketData = async () => {
-  const cricUrL =
+  const cricUrl =
     "https://www.cricbuzz.com/cricket-match/live-scores/upcoming-matches";
   const cricResponse = await axios.get(cricUrl);
   const { data } = cricResponse;
@@ -25,7 +25,7 @@ const getSchedule = async () => {
   return data;
 };
 
-var options = {
+var footballLive = {
   method: "GET",
   url: "https://live-score-api.p.rapidapi.com/scores/live.json",
   params: {
@@ -66,7 +66,7 @@ const getNewsFeed = async () => {
 
 const getScoresLive = async () => {
   const scores = [];
-  const html = await getDataFromRemoteLive();
+  const html = await getLiveCricketData();
   const $ = cheerio.load(html);
   $("a.cb-lv-scrs-well-live").each(function (idx, elem) {
     const scoreContainer = $(elem).children().children();
@@ -97,5 +97,5 @@ module.exports = {
   getNewsFeed,
   getScoresLive,
   getMatchSchedule,
-  options,
+  footballLive
 };

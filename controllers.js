@@ -2,20 +2,20 @@ const axios = require("axios");
 const {
   getMatchSchedule,
   getNewsFeed,
-  options,
   getScoresLive,
+  footballLive
 } = require("./services/cricService");
 
 const liveSoccerHandler = async (req, res) => {
     axios
-      .request(options)
+      .request(footballLive)
       .then(function (response) {
         return res.status(200).json({
           result: response.data.data,
         });
       })
       .catch(function (err) {
-        return res.status(500).json({
+        return res.json({
           err: err.toString(),
         });
       });
@@ -60,9 +60,10 @@ const matchScheduleHandler = async (req, res) => {
   }
 };
 
+
 module.exports = {
   liveSoccerHandler,
   newsHandler,
   liveCricketHandler,
-  matchScheduleHandler,
+  matchScheduleHandler
 };
