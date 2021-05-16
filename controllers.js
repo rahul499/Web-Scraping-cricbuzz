@@ -7,7 +7,6 @@ const {
 } = require("./services/cricService");
 
 const liveSoccerHandler = async (req, res) => {
-  try {
     axios
       .request(options)
       .then(function (response) {
@@ -20,11 +19,6 @@ const liveSoccerHandler = async (req, res) => {
           err: err.toString(),
         });
       });
-  } catch (err) {
-    return res.status(500).json({
-      err: err.toString(),
-    });
-  }
 };
 
 const newsHandler = async (req, res) => {

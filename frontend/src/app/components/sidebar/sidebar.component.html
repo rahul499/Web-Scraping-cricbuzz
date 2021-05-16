@@ -1,0 +1,82 @@
+
+<input type="checkbox" id="check" />
+
+<!--header area start-->
+<header>
+  <label for="check">
+    <i class="fas fa-bars" id="sidebar_btn"></i>
+  </label>
+  <div class="left_area">
+    <h3>Cric <span>Buzz</span></h3>
+  </div>
+</header>
+<!--header area end-->
+ <!--header area start-->
+ <header>
+  <label for="check">
+    <i class="fas fa-bars" id="sidebar_btn"></i>
+  </label>
+  <div class="left_area">
+    <h3>Cric <span>Buzz</span></h3>
+  </div>
+</header>
+<!--header area end-->
+
+<!--mobile navigation bar start-->
+<div class="mobile_nav">
+  <div class="nav_bar">
+    <img
+      src="https://www.freevector.com/uploads/vector/preview/30676/Cool_Cricket_Logo_1.jpg"
+      class="mobile_profile_image"
+      alt=""
+    />
+    <i class="fa fa-bars nav_btn"></i>
+  </div>
+  <div class="mobile_nav_items">
+    <a routerLink="/home" routerLinkActive="active"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="#"
+      ><i class="fas fa-star-of-life"></i><span>Live Scores</span></a
+    >
+    <a href="#"><i class="far fa-newspaper"></i><span>Latest News</span></a>
+    <a href="#"><i class="fas fa-book"></i><span>Schedule</span></a>
+    <a routerLink="/home" routerLinkActive="active"
+      ><i class="fas fa-futbol"></i><span>Football Scores</span></a
+    >
+  </div>
+</div>
+<!--mobile navigation bar end-->
+
+<!--sidebar start-->
+<div class="sidebar">
+  <div class="profile_info">
+    <img
+      src="https://www.freevector.com/uploads/vector/preview/30676/Cool_Cricket_Logo_1.jpg"
+      alt=""
+      class="profile_image"
+    />
+    <h4>CRIC BUZZ</h4>
+  </div>
+  <a routerLink="/home" routerLinkActive="active"><i class="fas fa-home"></i><span>Home</span></a>
+  <a routerLink="/livescore" routerLinkActive="active"
+    ><i class="fas fa-star-of-life"></i><span>Live Scores</span></a
+  >
+  <a routerLink="/news" routerLinkActive="active"
+    ><i class="far fa-newspaper"></i><span>Latest News</span></a
+  >
+  <a routerLink="/schedule" routerLinkActive="active"
+    ><i class="fas fa-book"></i><span>Cricket Schedule</span></a
+  >
+  <a routerLink="/football" routerLinkActive="active"
+    ><i class="fas fa-futbol"></i><span>Football Scores</span></a
+  >
+</div>
+<!--sidebar end-->
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".nav_btn").click(function () {
+      $(".mobile_nav_items").toggleClass("active");
+    });
+  });
+</script>

@@ -1,0 +1,15 @@
+
+<div class="content">
+  <a (click)="reload()" class="refresh"
+  ><i class="fas fa-futbol"></i><span>Refresh</span></a
+>
+     <div *ngIf="score.length > 0 " class="space">
+      <h1>Live Scores</h1>
+      <div *ngFor="let scoreItem of score" class="schedule">
+        <h3>{{ scoreItem }}</h3>
+      </div>
+    </div>
+    <div *ngIf="score.length <= 0" class="center">
+      <h1>No Live Matches</h1>
+    </div>
+</div>

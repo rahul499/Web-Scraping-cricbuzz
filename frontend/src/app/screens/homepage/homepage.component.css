@@ -1,0 +1,163 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.content{
+  width: (100% - 250px);
+  margin-top: 60px;
+  padding: 20px;
+  margin-left: 240px;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: 0.5s;
+}
+.content1{
+  width: (100% - 250px);
+  margin-top: 20px;
+  padding: 20px;
+  margin-left: 240px;
+  background-position: center;
+  background-size: cover;
+  transition: 0.5s;
+}
+
+
+.content .card p{
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Responsive CSS */
+
+@media screen and (max-width: 780px){
+
+  .content{
+    margin-left: 0;
+    margin-top: 0;
+    padding: 10px 20px;
+    transition: 0s;
+  }
+
+  #check:checked ~ .content{
+    margin-left: 0;
+  }
+
+  .active{
+    display: block;
+  }
+}
+
+.schedule {
+  padding: 3px;
+  background-color: lightblue;
+  margin: 20px 0;
+  padding-left: 1rem;
+  border: 2px solid blue;
+}
+
+.center {
+  text-align: center;
+}
+.centerr {
+  text-align: center;
+  padding: 15px 0;
+  padding-left: 250px;
+}
+
+.homeImage {
+  height: 100%;
+  width: 100.8%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg{
+  margin-top: 60px;
+  margin-left: 242px;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+  transition: 0.5s;
+  padding-right:0;
+}
+
+
+/*--------------------------------------------------*/
+.column {
+  float: left;
+  width: 31%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 30px;
+  text-align: center;
+
+  color: black;
+  margin-bottom: 25px;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+  font-size: 14px;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+p{
+  margin:5px;
+  padding:5px;
+}
+.space {
+  padding-bottom: 30px;
+}
+a {
+  cursor:pointer;
+}
+
+.active {
+  background-color: pink;
+}

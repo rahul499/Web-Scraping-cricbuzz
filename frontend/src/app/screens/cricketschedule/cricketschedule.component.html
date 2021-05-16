@@ -1,0 +1,19 @@
+
+
+
+    <div class="content ">
+      <a (click)="reload()" class="refresh"
+      ><i class="fas fa-futbol"></i><span>Refresh</span></a
+    >
+      <div *ngIf="schedule.length > 0 " class="space">
+
+        <h1>Match Schedule</h1>
+        <div *ngFor="let item of schedule" class="schedule">
+          <h3>{{ item }}</h3>
+        </div>
+      </div>
+
+      <div *ngIf="schedule.length <= 0" class="center">
+        <h1>Loading.....</h1>
+      </div>
+    </div>

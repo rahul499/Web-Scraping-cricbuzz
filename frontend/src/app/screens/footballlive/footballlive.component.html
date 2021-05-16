@@ -1,0 +1,21 @@
+
+<div class="content">
+
+  <a (click)="reload()" class="refresh"
+  ><i class="fas fa-futbol"></i><span>Refresh</span></a
+>
+  <div *ngIf="football.length > 0" class="space">
+    <h1>Live Scores</h1>
+    <div *ngFor="let footscoreItem of football" class="schedule" >
+      <h3>{{ footscoreItem.competition_name }}</h3>
+      <h4>Teams - {{ footscoreItem.away_name }} vs {{ footscoreItem.home_name }}</h4>
+      <h4>Date and Location - {{footscoreItem.added}} ({{footscoreItem.location}})</h4>
+      <h4>Scores - {{footscoreItem.score}}</h4>
+      <h4>Status - {{footscoreItem.status}}</h4>
+    </div>
+  </div>
+  <div *ngIf="football.length <= 0" class="center">
+    <h1>Loading.....</h1>
+  </div>
+
+  </div>

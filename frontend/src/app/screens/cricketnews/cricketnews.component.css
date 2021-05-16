@@ -1,0 +1,68 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.content{
+  width: (100% - 250px);
+  margin-top: 60px;
+  padding: 20px;
+  margin-left: 240px;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: 0.5s;
+}
+
+.schedule {
+  padding: 3px;
+  background-color: lightblue;
+  margin: 20px 0;
+  padding-left: 1rem;
+  border: 2px solid blue;
+}
+
+.center {
+  text-align: center;
+}
+
+p{
+  margin:5px;
+  padding:5px;
+}
+.space {
+  padding-bottom: 30px;
+}
+a {
+  cursor:pointer;
+}
+
+.active {
+  background-color: pink;
+}
+
+.refresh {
+  float: right;
+  padding: 10px;
+  background-color: pink;
+  margin-top: 10px;
+  border: 2px solid black;
+}
+
+@media screen and (max-width: 780px){
+  .content{
+    margin-left: 0;
+    margin-top: 0;
+    padding: 10px 20px;
+    transition: 0s;
+  }
+
+  #check:checked ~ .content{
+    margin-left: 0;
+  }
+
+  .active{
+    display: block;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="content ">
+  <a (click)="reload()" class="refresh"
+  ><i class="fas fa-futbol"></i><span>Refresh</span></a
+>
+  <div *ngIf="news.length > 0" class="space">
+    <h1>Latest News</h1>
+    <div *ngFor="let newsItem of news" class="schedule">
+      <h3>{{ newsItem.mainHeader }}</h3>
+      <h4>{{ newsItem.content1 }}</h4>
+      <h5>{{ newsItem.days }}</h5>
+    </div>
+  </div>
+
+  <div *ngIf="news.length <= 0" class="center">
+    <h1>Loading.....</h1>
+  </div>
+
+</div>
