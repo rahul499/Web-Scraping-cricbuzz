@@ -8,13 +8,18 @@ import { CricbuzzService } from 'src/app/services/cricbuzz.service';
 })
 export class FootballliveComponent implements OnInit {
 
-  football: any = [];
+  football: Array<any>;
+  totalRecords: number;
+  page:number = 1;
 
-  constructor(private cric: CricbuzzService) {}
+  constructor(private cric: CricbuzzService) {
+    this.football = new Array<any>();
+  }
 
   ngOnInit(): void {
     this.cric.getLiveScoreSoccer().subscribe((data) => {
       this.football = data.result.match;
+      this.totalRecords = data.result.match.length;
       console.log(this.football);
     });
   }
